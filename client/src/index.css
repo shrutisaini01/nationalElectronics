@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Use the dark background color globally */
+  background-color: #0f172a; /* This is tailwind's dark:bg-gray-900 or similar */
+  /* Ensures 100% height for proper theme application */
+  min-height: 100vh;
+}
+
+/* Ensure the root element also has no padding/margin */
+#root { /* If you're using a div with id="root" */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
