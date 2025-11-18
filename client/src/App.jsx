@@ -4,19 +4,19 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import CategorySelector from "./components/CategorySelector";
+import CategoriesPage from "./components/CategoriesPage";
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-gray-50">
+      <div className="flex flex-col min-h-screen bg-neutral-950">
         <Navbar />
-        <main className="flex-grow pt-20 px-4 md:px-8">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/categories" element={<CategorySelector/>}/>
+            <Route path="/categories" element={<CategoriesPage/>}/>
           </Routes>
         </main>
         <Footer />

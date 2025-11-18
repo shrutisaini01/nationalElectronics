@@ -1,49 +1,125 @@
-import logo from "../assets/logo.png";
+import { Link } from "react-router-dom"; 
+import logo from "../assets/logo.png"; // Your imported logo file
+import { Zap, ShieldCheck, Truck, Clock, Lightbulb, Fan, WashingMachine } from 'lucide-react'; 
+
+// --- Reusable Utility Components ---
+
+const FeatureCard = ({ Icon, title, description }) => (
+  <div className="flex flex-col items-center text-center p-6 rounded-xl bg-white dark:bg-neutral-800 shadow-lg border-t-4 border-blue-400 dark:border-amber-400 transition-all duration-300 hover:shadow-xl group">
+    <Icon className="w-10 h-10 mb-4 text-blue-600 dark:text-amber-400 group-hover:scale-110 transition-transform duration-300" />
+    <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">{title}</h3>
+    <p className="text-sm text-gray-500 dark:text-gray-400">{description}</p>
+  </div>
+);
+
+const CategoryDisplayCard = ({ Icon, title }) => (
+  <div
+    className="flex flex-col items-center justify-center p-4 rounded-xl bg-neutral-800 border border-neutral-700 transition-all duration-300 shadow-md h-full"
+  >
+    <Icon className="w-8 h-8 mb-2 text-blue-600 dark:text-amber-400" />
+    <span className="text-sm font-semibold text-gray-200 capitalize text-center">{title}</span>
+  </div>
+);
+
+// --- Main Home Component ---
 
 function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 flex items-center justify-center p-4 sm:p-8">
-      <section className="max-w-4xl w-full p-6 sm:p-10 rounded-3xl shadow-2xl bg-white dark:bg-gray-800 border-t-8 border-blue-500 dark:border-amber-400 transition-all duration-500">
+    // Ensuring background color and full height
+    <div className="min-h-screen bg-neutral-950 text-gray-100 flex items-center justify-center py-20 px-4">
+      <div className="max-w-7xl mx-auto py-12 sm:py-20 space-y-16">
         
-        {/* Logo Section */}
-        <div className="flex justify-center mb-8">
-          <img
-            src={logo}
-            alt="National Electronics Logo"
-            // Ensure logo is visible and slightly larger on larger screens
-            className="w-32 h-32 sm:w-40 sm:h-40 object-contain p-2 rounded-full ring-4 ring-blue-500 dark:ring-amber-400 transform hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+        {/* 1. HERO SECTION (Main Banner) */}
+        <section className="bg-neutral-900 rounded-3xl shadow-2xl p-6 sm:p-12 lg:p-16 border-t-8 border-blue-600 dark:border-amber-400 transition-all duration-500">
+          
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            
+            {/* Text Content */}
+            <div className="md:w-3/5 space-y-6 text-center md:text-left">
+              <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tighter leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-400 dark:from-amber-400 dark:to-orange-500">
+                  Powering Your Home
+                </span>
+                <br />
+                with Quality Electronics ⚡
+              </h2>
+              
+              <p className="text-lg sm:text-xl font-medium leading-relaxed text-gray-300">
+                Your trusted source for **reliable electrical and electronic goods**. From energy-efficient LEDs and Fans to modern TVs and Appliances, we stock everything you need.
+              </p>
+              
+              {/* Call to Action (CTA) */}
+              <div className="flex justify-center md:justify-start pt-4">
+                <Link 
+                  to="/categories" 
+                  className="py-3 px-8 text-xl font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out 
+                            bg-blue-600 hover:bg-blue-700 text-white 
+                            dark:bg-amber-500 dark:hover:bg-amber-600 dark:text-gray-900 
+                            hover:shadow-xl hover:translate-y-[-2px] tracking-wide"
+                >
+                  Explore Products
+                </Link>
+              </div>
+            </div>
 
-        {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-center tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-400 dark:from-amber-400 dark:to-orange-500 transition-colors duration-500">
-          Welcome to National Electronics ⚡
-        </h2>
+            {/* Logo/Image Section - NOW USING IMPORTED LOGO */}
+<div className="md:w-2/5 flex justify-center">
+  {/* Removed the gray background box and its padding. 
+      The image itself now carries the border and styling. */}
+  <img
+    src={logo}
+    alt="National Electronics Logo"
+    // Adjusted dimensions for "little enlarged" and removed unnecessary p-4 from the image
+    className="w-80 h-auto object-contain border-2 border-white rounded-2xl 
+               transform scale-110 hover:scale-115 transition-transform duration-300"
+  />
+</div>
+            
+          </div>
+        </section>
+
+        {/* --- */}
+
+        {/* 2. VALUE PROPOSITION / GUARANTEES */}
+        <section>
+            <h2 className="text-3xl font-bold text-center mb-10 text-white">Why Shop With Us?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <FeatureCard
+                    Icon={ShieldCheck}
+                    title="Certified Quality"
+                    description="All products sourced are guaranteed genuine and come with a full manufacturer warranty."
+                />
+                <FeatureCard
+                    Icon={Truck}
+                    title="Fast & Secure Delivery"
+                    description="Reliable logistics ensuring your electronics arrive safely and quickly to your location."
+                />
+                <FeatureCard
+                    Icon={Clock}
+                    title="24/7 Support"
+                    description="Our expert customer service team is ready to assist you around the clock with any queries."
+                />
+            </div>
+        </section>
         
-        {/* Subtitle/Description */}
-        <p className="text-lg sm:text-xl mb-8 text-center font-medium leading-relaxed text-gray-600 dark:text-gray-300">
-  Your trusted source for{" "}
-  <span className="font-semibold text-gray-800 dark:text-gray-100 text-xl">
-    quality electronic and electrical goods
-  </span>
-  . We stock everything from lights and bulbs to fans, LEDs, TVs, and washing machines.
-</p>
+        {/* --- */}
 
+        {/* 3. TOP CATEGORIES DISPLAY (Non-Clickable) */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-10 text-white">
+            Products We Deal In
+          </h2>
+          {/* Centering the 5 items in the grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 justify-center">
+            <CategoryDisplayCard Icon={Lightbulb} title="Bulbs & Lights" />
+            <CategoryDisplayCard Icon={Fan} title="Fans & Cooling" />
+            <CategoryDisplayCard Icon={Zap} title="Switches & Plugs" />
+            <CategoryDisplayCard Icon={WashingMachine} title="Appliances" />
+            <CategoryDisplayCard Icon={Zap} title="LED Panels" />
+          </div>
+        </section>
 
-        {/* Call to Action (CTA) */}
-        <div className="flex justify-center">
-            <a 
-                href="/products" // Replace with a link to your product catalog or 'Contact Us' page
-                className="py-3 px-8 text-xl font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out 
-                           bg-blue-600 hover:bg-blue-700 text-white 
-                           dark:bg-amber-500 dark:hover:bg-amber-600 dark:text-gray-900 
-                           hover:shadow-xl hover:translate-y-[-2px]"
-            >
-                View Our Catalog
-            </a>
-        </div>
-        
-      </section>
+      </div>
     </div>
   );
 }
