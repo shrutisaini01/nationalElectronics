@@ -12,11 +12,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/images/fans", express.static(path.join(ROOT_DIR, "images/fans")));
-app.use("/images/bulbs", express.static(path.join(ROOT_DIR, "images/bulbs")));
-app.use("/images/lights", express.static(path.join(ROOT_DIR, "images/lights")));
-app.use("/images/appliances", express.static(path.join(ROOT_DIR, "images/appliances")));
-app.use("/images/switches", express.static(path.join(ROOT_DIR, "images/switches")));
+const IMAGES_DIR = path.join(__dirname, "images");
+
+app.use("/images/fans", express.static(path.join(IMAGES_DIR, "fans")));
+app.use("/images/bulbs", express.static(path.join(IMAGES_DIR, "bulbs")));
+app.use("/images/lights", express.static(path.join(IMAGES_DIR, "lights")));
+app.use("/images/appliances", express.static(path.join(IMAGES_DIR, "appliances")));
+app.use("/images/switches", express.static(path.join(IMAGES_DIR, "switches")));
 
 app.use("/api", productRoutes);
 

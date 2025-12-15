@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
     >
       <div className="relative h-48 overflow-hidden bg-neutral-800">
         <img
-          src={`http://localhost:5000/api/${product.Image}`}
+          src={`https://nationalelectronics.onrender.com/api/${product.Image}`}
           alt={product.Title}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
