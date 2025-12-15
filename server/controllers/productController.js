@@ -10,6 +10,7 @@ const categoryFiles={
     appliances: path.join(ROOT_DIR,"data/appliances.csv"),
     lights: path.join(ROOT_DIR,"data/lights.csv"),
     switches: path.join(ROOT_DIR,"data/switches.csv"),
+    wires: path.join(ROOT_DIR,"data/wires.csv"),
 }
 
 const imageFiles={
@@ -18,6 +19,7 @@ const imageFiles={
     appliances: path.join(ROOT_DIR,"images/appliances"),
     lights: path.join(ROOT_DIR,"images/lights"),
     switches: path.join(ROOT_DIR,"images/switches"),
+    wires: path.join(ROOT_DIR,"images/wires"),
 }
 
 async function getAllCategories(req,res){

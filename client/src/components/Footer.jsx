@@ -106,26 +106,7 @@ function Footer() {
           </ul>
         </div>
         
-        {/* Column 4: Newsletter/Social (Placeholder for future feature) */}
-        <div className="space-y-4 hidden lg:block">
-             <h4 className="font-extrabold text-lg text-gray-900 dark:text-white border-l-4 border-blue-600 dark:border-amber-400 pl-3">
-                Stay Updated
-            </h4>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
-                Join our newsletter for exclusive offers.
-            </p>
-            {/* Newsletter input placeholder */}
-            <div className="flex">
-                <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="p-2 text-sm rounded-l-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-200 w-full"
-                />
-                <button className="p-2 text-sm bg-blue-600 dark:bg-amber-400 text-white dark:text-black rounded-r-md font-semibold hover:bg-blue-700 dark:hover:bg-amber-500 transition-colors">
-                    Go
-                </button>
-            </div>
-        </div>
+        
 
       </div>
       
@@ -140,10 +121,7 @@ function Footer() {
             All Rights Reserved.
           </p>
           
-          <div className="flex space-x-4 mt-2 md:mt-0 text-sm">
-            <a href="/privacy" className="hover:text-blue-500 dark:hover:text-amber-400">Privacy Policy</a>
-            <a href="/terms" className="hover:text-blue-500 dark:hover:text-amber-400">Terms of Use</a>
-          </div>
+          
         </div>
       </div>
     </footer>

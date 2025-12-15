@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const categories = ["fans", "switches", "bulbs", "lights", "appliances"];
+const categories = ["fans", "switches", "bulbs", "lights", "appliances", "wires"];
 
 // Define a reusable Product Card Component to handle its own state
 const ProductCard = ({ product }) => {

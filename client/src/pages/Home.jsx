@@ -45,7 +45,7 @@ function Home() {
               </h2>
               
               <p className="text-lg sm:text-xl font-medium leading-relaxed text-gray-300">
-                Your trusted source for **reliable electrical and electronic goods**. From energy-efficient LEDs and Fans to modern TVs and Appliances, we stock everything you need.
+                Your trusted source for <strong>reliable electrical and electronic goods.</strong> From energy-efficient LEDs and Fans to modern TVs and Appliances, we stock everything you need.
               </p>
               
               {/* Call to Action (CTA) */}
