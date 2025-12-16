@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"; 
-import logo from "../assets/logo.png"; // Your imported logo file
+import newLogo from "../assets/newLogo.png"
 import { Zap, ShieldCheck, Truck, Clock, Lightbulb, Fan, WashingMachine } from 'lucide-react'; 
 
 // --- Reusable Utility Components ---
@@ -67,7 +67,7 @@ function Home() {
   {/* Removed the gray background box and its padding. 
       The image itself now carries the border and styling. */}
   <img
-    src={logo}
+    src={newLogo}
     alt="National Electronics Logo"
     // Adjusted dimensions for "little enlarged" and removed unnecessary p-4 from the image
     className="w-80 h-auto object-contain border-2 border-white rounded-2xl 
