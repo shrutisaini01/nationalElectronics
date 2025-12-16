@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
     >
       <div className="relative h-48 overflow-hidden bg-neutral-800">
         <img
-          src={`http://localhost:5000/api/${product.Image}`}
+          src={`https://electronics-backend-74aq.onrender.com/api/${product.Image}`}
           alt={product.Title}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
@@ -89,7 +89,7 @@ function CategoriesPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/${activeCategory}`)
+    fetch(`https://electronics-backend-74aq.onrender.com/api/${activeCategory}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(Array.isArray(data) ? data : []);
