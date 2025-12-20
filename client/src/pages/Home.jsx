@@ -96,7 +96,7 @@ function Home() {
                 />
                 <FeatureCard
                     Icon={Clock}
-                    title="24/7 Support"
+                    title="8AM - 8PM Support (12h)"
                     description="Our expert customer service team is ready to assist you around the clock with any queries."
                 />
             </div>
