@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+const BASE_URL=import.meta.env.VITE_BASE_URL;
 const categories = ["fans", "switches", "bulbs", "lights", "appliances", "wires"];
 
 // Define a reusable Product Card Component to handle its own state
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
     >
       <div className="relative h-48 overflow-hidden bg-neutral-800">
         <img
-          src={`https://electronics-backend-74aq.onrender.com/api/${product.Image}`}
+          src={`${BASE_URL}/api/${product.Image}`}
           alt={product.Title}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
@@ -40,12 +40,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="mt-4 pt-4 border-t border-neutral-800 flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-xs text-gray-500 uppercase font-semibold tracking-wide">Price</span>
-            <span className="text-lg font-bold text-emerald-400">
-              {formatPrice(product["Estimated Price"])}
-            </span>
-          </div>
+          
 
           {/* Cart Button */}
           <button
@@ -74,7 +69,7 @@ const ProductCard = ({ product }) => {
           
           <p className="text-lg font-medium">Hey! Please dial:</p>
           <p className="text-2xl font-bold text-emerald-400 my-2"> +91 9719209991 </p>
-          <p className="text-sm text-gray-400">to quickly place your order.</p>
+          <p className="text-sm text-gray-400">to know price & quickly place your order.</p>
         </div>
       )}
     </div>
@@ -89,7 +84,7 @@ function CategoriesPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://electronics-backend-74aq.onrender.com/api/${activeCategory}`)
+    fetch(`${BASE_URL}/api/${activeCategory}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(Array.isArray(data) ? data : []);
