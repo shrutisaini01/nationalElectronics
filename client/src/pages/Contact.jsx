@@ -91,7 +91,7 @@ function Contact() {
                 </p>
                 <ul className="space-y-2 pl-10 text-gray-400">
                     <li className="text-sm"><a href="mailto:vikassaini.0123@rediffmail.com" className="hover:text-blue-400 transition">vikassaini.0123@rediffmail.com</a></li>
-                    <li className="text-sm"><a href="mailto:nationalelectronics.2011@rediffmail.com" className="hover:text-blue-400 transition">nationalelectricals.2009@rediffmail.com</a></li>
+                    <li className="text-sm"><a href="mailto:nationalelectronics.2011@rediffmail.com" className="hover:text-blue-400 transition">nationalelectronics.2011@rediffmail.com</a></li>
       </ul>
             </div>
           </div>
