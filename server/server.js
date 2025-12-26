@@ -19,6 +19,7 @@ app.use("/images/bulbs", express.static(path.join(IMAGES_DIR, "bulbs")));
 app.use("/images/lights", express.static(path.join(IMAGES_DIR, "lights")));
 app.use("/images/appliances", express.static(path.join(IMAGES_DIR, "appliances")));
 app.use("/images/switches", express.static(path.join(IMAGES_DIR, "switches")));
+app.use("/images/wires", express.static(path.join(IMAGES_DIR, "wires")));
 
 app.use("/api", productRoutes);
 
@@ -41,7 +42,8 @@ async function initializeProductImages() {
         { name: "bulbs", path: path.join(__dirname, "data", "bulbs.csv") },
         { name: "lights", path: path.join(__dirname, "data", "lights.csv") },
         { name: "appliances", path: path.join(__dirname, "data", "appliances.csv") },
-        { name: "switches", path: path.join(__dirname, "data", "switches.csv") }
+        { name: "switches", path: path.join(__dirname, "data", "switches.csv") },
+        { name: "wires", path: path.join(__dirname, "data", "wires.csv") }
     ];
 
     try {

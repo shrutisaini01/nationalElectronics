@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
     >
       <div className="relative h-48 overflow-hidden bg-neutral-800">
         <img
-          src={`${BASE_URL}/api/${product.Image}`}
+          src={`${BASE_URL}/${product.Image}`}
           alt={product.Title}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
